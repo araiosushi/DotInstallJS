@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>CSS Variables</title>
+    <style>
+        :root{
+            --my-hue: 50;
+        }
+        body{
+            background: hsl(100, 40%, 50%);
+
+        }
+        h1,p{
+            color: hsl(100, 20%, 35%);
+        }
+        #btn{
+            color:aliceblue;
+            background-color:  hsl(100, 20%, 35%);
+            width: 100px;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>My site</h1>
+    <p>Hello,Hello, Hello, Hello, Hello, Hello, Hello, Hello, Hello, Hello,  </p>
+    <div id="btn">Button</div>
+    <script>
+        (() => {
+            'use strict';
+        
+            document.getElementById('btn').addEventListener('click', () =>{
+                document.documentElement.style.setProperty('--my-hue', Math.floor(Math.random() * 360));
+            });
+        
+        })();
+    </script>
+</body>
+
+</html>
